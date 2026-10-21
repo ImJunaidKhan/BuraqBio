@@ -1,0 +1,211 @@
+/* ============ BuraqBio global styles ============ */
+
+/* Ten colors */
+:root {
+    /* Primary */
+    --primary: #603CBA;
+    /* shade of Primary */
+    --primary-hover: #4E2FA3;
+    --primary-active: #41248A;
+    /* tint of Primary */
+    --primary-soft: #EDE8FA;
+    /* dark background */
+    --deep-start: #1C0B45;
+    /* secondary  */
+    --light-violet: #B7A6FF;
+    /* golden accent */
+    --accent: #FFB900;
+    /* headings & main text */
+    --ink: #1B1030;
+    /* secondary text */
+    --muted: #5C5670;
+    /* light page background */
+    --paper: #F5F2FA;
+    /* surfaces, text on dark */
+    --white: #FFFFFF;
+    /* borders */
+    --line: #E2DEF0;
+    /* WhatsApp buttons */
+    --whatsapp: #25D366;
+    /* form errors */
+    --error: #D92B3A;
+
+    /* Glass card */
+    --glass-blur: blur(18px) saturate(160%);
+    --glass-fill: rgba(255, 255, 255, 0.13);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.35);
+    --radius: 14px;
+}
+
+/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", "Segoe UI Variable Text",
+        system-ui, -apple-system, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+body.dark {
+    background: var(--deep-start);
+    color: var(--white);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body.dark a {
+    color: var(--light-violet);
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--white);
+}
+
+:focus-visible {
+    outline: 3px solid rgba(255, 185, 0, 0.55);
+    outline-offset: 2px;
+}
+
+/* Layout helpers — your container and grid */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Glass card */
+.glass {
+    background: var(--glass-fill);
+    border: var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(8, 2, 28, .45),
+        inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 11px 22px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-primary:active {
+    background: var(--primary-active);
+}
+
+.btn-gold {
+    background: var(--accent);
+    color: var(--deep-start);
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--white);
+}
+
+.btn-wa {
+    background: var(--whatsapp);
+    color: var(--deep-start);
+}
+
+/* Forms */
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 11px 14px;
+    outline: none;
+}
+
+body.dark .input {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+body.dark .input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 185, 0, 0.35);
+}
+
+.error-text {
+    color: var(--error);
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+body.dark .error-text {
+    color: #FF8FA3;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============ page sections go below this line ============ */
