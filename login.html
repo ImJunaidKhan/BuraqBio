@@ -4,16 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/favicon-bg.webp">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.webp">
     <title>Log in or Sign up | BuraqBio</title>
-    <meta name="description" content="Log in to your BuraqBio dashboard to manage your links, or create a free account and claim your username in minutes.">
+    <meta name="description"
+        content="Log in to your BuraqBio dashboard to manage your links, or create a free account and claim your username in minutes.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
 
-<body>
+<body class="dark gradient">
 
+    <main class="page-wrapper">
+        <div class="auth-wrap">
+            <div class="back-home-wrap">
+                <a href="#">← Back to homepage</a>
+            </div>
+            <div class="auth-card glass">
+                <div class="logo-stack">
+                    <img src="assets/favicon.webp" alt="Buraq Wing">
+                    <div class="wordmark">Buraq<span class="bio">Bio</span></div>
+                    <p>Take your links further.</p>
+                </div>
+                <div class="toggle" role="group">
+                    <button type="button" id="tabLogin" class="btn active" onclick="switchMode('login')">Log in</button>
+                    <button type="button" id="tabSignup" onclick="switchMode('signup')" class="btn">Sign up</button>
+                </div>
+                <form class="auth-form" id="formLogin" novalidate="">
+                    <h1>Welcome back</h1>
+                    <p class="sub">Log in to manage your links and see your clicks.</p>
+
+                    <!-- Error state -->
+                    <div class="error-banner" id="loginError">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <div><b>Couldn't log you in</b>
+                            <p>That email and password don't match. Check them and try again.</p>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="loginEmail">Email</label>
+                        <input class="input" id="loginEmail" type="email" placeholder="you@example.com">
+                    </div>
+
+                    <div class="field">
+                        <label for="loginPassword">Password</label>
+                        <div class="pw-wrap">
+                            <input class="input is-error" id="loginPassword" type="password" placeholder="Your password">
+                            <button class="pw-eye" type="button" onclick="togglePw('loginPassword',this)">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <p class="error-text">Incorrect password - try again, or reset it below.</p>
+                    </div>
+
+                    <button class="btn btn-primary btn-login" type="submit">Log in</button>
+                    <div class="forgot-row"><a href="#">Forgot password?</a></div>
+
+                    <p class="switch-line">New to BuraqBio? <button type="button" onclick="switchMode('signup')">Create
+                            your page</button></p>
+                </form>
+                <form class="auth-form hidden" id="formSignup" novalidate="">
+                    <h1>Create your page</h1>
+                    <p class="sub">Pick your username first. It becomes your link.</p>
+
+                    <div class="success-banner" id="signupSuccess">
+                        <div><b>Signup Successful.</b></div>
+                    </div>
+
+                    <div class="field">
+                        <label for="suEmail">Email</label>
+                        <input class="input" id="suEmail" type="email" placeholder="you@example.com">
+                    </div>
+
+                    <div class="field">
+                        <label for="suPassword">Password</label>
+                        <div class="pw-wrap">
+                            <input class="input" id="suPassword" type="password" placeholder="8+ characters">
+                            <button class="pw-eye" type="button" onclick="togglePw('suPassword',this)">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="suUsername">Your username</label>
+                        <div class="claim-group" id="claimGroup">
+                            <span class="prefix">buraqbio.link/</span>
+                            <input id="suUsername" type="text" placeholder="yourname">
+                        </div>
+                        <p class="feedback" id="claimFeedback">
+                            <i class="fa-solid fa-circle-check fic fic-check"></i>
+                            <i class="fa-solid fa-circle-xmark fic fic-x"></i>
+                            <span id="claimMsg">3 to 24 characters - lowercase letters, numbers and underscore
+                                only.</span>
+                        </p>
+                    </div>
+
+                    <button class="btn btn-primary btn-signup" type="submit">Create my page</button>
+
+                    <p class="switch-line">Already have an account? <button type="button"
+                            onclick="switchMode('login')">Log in</button></p>
+                </form>
+            </div>
+            <p class="stage-foot">buraqbio.link - Your space on the internet.</p>
+        </div>
+    </main>
 
     <script src="login.js" type="module"></script>
 </body>

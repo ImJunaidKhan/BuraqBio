@@ -1,6 +1,6 @@
 /* ============ BuraqBio global styles ============ */
 
-/* Ten colors */
+/* Variables - Colors etc */
 :root {
     /* Primary */
     --primary: #603CBA;
@@ -25,8 +25,6 @@
     --white: #FFFFFF;
     /* borders */
     --line: #E2DEF0;
-    /* WhatsApp buttons */
-    --whatsapp: #25D366;
     /* form errors */
     --error: #D92B3A;
 
@@ -58,6 +56,11 @@ body.dark {
     color: var(--white);
 }
 
+body.dark.gradient {
+    background: radial-gradient(700px 480px at 12% -60px, rgba(96, 60, 186, .55), transparent 65%), radial-gradient(620px 460px at 95% 30%, rgba(183, 166, 255, .22), transparent 60%), radial-gradient(500px 380px at 50% 115%, rgba(96, 60, 186, .35), transparent 65%), var(--deep-start);
+    background-attachment: fixed;
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -86,7 +89,20 @@ body.dark a {
     outline-offset: 2px;
 }
 
-/* Layout helpers — your container and grid */
+/* Logo Style */
+.wordmark {
+    font-size: 31px;
+    font-weight: 700;
+    letter-spacing: -.5px;
+    line-height: 1.1;
+}
+
+.wordmark .bio {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Layout helpers */
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -151,11 +167,6 @@ body.dark a {
     color: var(--white);
 }
 
-.btn-wa {
-    background: var(--whatsapp);
-    color: var(--deep-start);
-}
-
 /* Forms */
 label {
     display: block;
@@ -174,6 +185,7 @@ label {
     border-radius: 10px;
     padding: 11px 14px;
     outline: none;
+    transition: border-color .15s, box-shadow .15s;
 }
 
 body.dark .input {
@@ -188,7 +200,12 @@ body.dark .input::placeholder {
 
 .input:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(255, 185, 0, 0.35);
+    box-shadow: 0 0 0 3px rgba(255, 185, 0, .35);
+}
+
+body.dark .input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 185, 0, .35);
 }
 
 .error-text {
@@ -201,6 +218,13 @@ body.dark .error-text {
     color: #FF8FA3;
 }
 
+/* Headings */
+h1 {
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -.3px;
+}
+
 /* Responsive */
 @media (max-width: 800px) {
     .grid-3 {
@@ -208,4 +232,270 @@ body.dark .error-text {
     }
 }
 
-/* ============ page sections go below this line ============ */
+/* ============ Login page ============ */
+
+.auth-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 5px;
+}
+
+.back-home-wrap {
+    width: 100%;
+    max-width: 440px;
+}
+
+.back-home-wrap a {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .75) !important;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 36px;
+}
+
+.logo-stack {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.logo-stack img {
+    width: 86px;
+    margin: 0 auto;
+}
+
+.logo-stack p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, .62);
+    margin-top: 3px;
+}
+
+.toggle {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .18);
+    margin-bottom: 20px;
+}
+
+.toggle button {
+    flex: 1;
+    padding: 10px 0;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: rgba(255, 255, 255, .72);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.toggle button.active {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(8, 2, 28, .35);
+}
+
+.auth-form .sub {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, .7);
+    margin: 5px 0 22px;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.pw-wrap {
+    position: relative;
+}
+
+.pw-wrap .input {
+    padding-right: 44px;
+}
+
+.pw-eye {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.forgot-row {
+    text-align: right;
+    margin-top: 12px;
+}
+
+.forgot-row a {
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+.btn-login,
+.btn-signup {
+    background: var(--primary);
+    color: #fff;
+    width: 100%;
+    font-size: 16px;
+    padding: 13px 22px;
+    margin-top: 4px;
+}
+
+/* username claim */
+.claim-group {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .10);
+    overflow: hidden;
+}
+
+.claim-group:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 185, 0, .35);
+}
+
+.claim-group .prefix {
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    color: rgba(255, 255, 255, .55);
+}
+
+.claim-group input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: #fff;
+    padding: 12px 14px 12px 0;
+    font: inherit;
+}
+
+.claim-group.is-error {
+    border-color: rgba(217, 43, 58, .85);
+}
+
+.claim-group.is-ok {
+    border-color: rgba(69, 208, 140, .75);
+}
+
+.feedback {
+    font-size: 13px;
+    margin-top: 7px;
+    color: rgba(255, 255, 255, .55);
+}
+
+.feedback.ok {
+    color: #45D08C;
+}
+
+.feedback.err {
+    color: #FF9FB0;
+}
+
+/* error states */
+.input.is-error {
+    border-color: rgba(217, 43, 58, .85);
+}
+
+.error-text {
+    color: #FF9FB0;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.error-banner {
+    display: flex;
+    gap: 11px;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    background: rgba(217, 43, 58, .13);
+    border: 1px solid rgba(217, 43, 58, .55);
+    color: #FF9FB0;
+}
+
+.error-banner b {
+    display: block;
+    font-size: 14px;
+    color: #FFC2CC;
+}
+
+.error-banner p {
+    font-size: 13.5px;
+    color: #FF9FB0;
+}
+
+.switch-line {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    color: rgba(255, 255, 255, .68);
+}
+
+.switch-line button {
+    background: none;
+    border: 0;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--light-violet);
+    cursor: pointer;
+    padding: 0;
+}
+
+/* icons */
+.error-banner i {
+    font-size: 20px;
+    color: #FF6B81;
+}
+
+.pw-eye i {
+    font-size: 17px;
+}
+
+.fic {
+    font-size: 16px;
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    display: none;
+}
+
+.fic-check {
+    color: #2FA36B;
+}
+
+.fic-x {
+    color: #D92B3A;
+}
+
+/* success states */
+.success-banner {
+    display: none;
+    gap: 11px;
+    background: rgba(69, 208, 140, .12);
+    border: 1px solid rgba(69, 208, 140, .5);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #B9F2D6;
+}
