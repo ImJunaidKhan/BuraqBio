@@ -5,29 +5,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.webp">
-    <title>BuraqBio | All Your Links on One Page</title>
-    <meta name="description" content="Create a free link-in-bio page for your business or profile. Add your links, share one short address, and see how many clicks each link gets.">
+    <title>BuraqBio | All Your Links in One Bio</title>
+    <meta name="description"
+        content="Create a free link in bio page for your business or profile. Add your links and share one simple address.">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
-
 </head>
 
 <body>
 
-    <header class="topbar"> logo · links · Log in · Create </header>
-    <section class="hero">
-        <div> pill · h1 · pitch · claim form · tick points </div>
-        <div class="phone glass"> cover · avatar · name · intro · links </div>
-    </section>
-    <section id="how"> 3 numbered steps </section>
-    <section id="features"> dark panel + 2x2 feature cards </section>
-    <section id="examples"> creators photo + 3 example profiles </section>
-    <section> username checker card </section>
-    <section class="cta"> glass card · gold badge · purple button </section>
-    <footer> one line · 4 links </footer>
+    <!-- Header -->
+    <header class="home-topbar">
+        <div class="container topbar-row">
+            <a href="index.html" class="topbar-logo">
+                <img src="assets/logo-wing-horizontal-light.webp" alt="BuraqBio logo">
+            </a>
 
+            <div class="topbar-actions">
+                <a href="login.html" class="btn btn-sm btn-ghost">Log in</a>
+                <a href="login.html" class="btn btn-sm btn-gold">Create your page</a>
+            </div>
+        </div>
+    </header>
 
-    <script src="index.js" type="module"></script>
+    <main>
+        <!-- Hero Section -->
+        <section class="home-hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>Everything you are, <span class="thin">in one simple link.</span></h1>
+                        <p class="hero-sub">
+                            Create a free link in bio page for your profile or business.
+                            Add your links, share one clean web address, and connect with your audience.
+                        </p>
+
+                        <!-- Username Checker -->
+                        <form class="claim-form" id="checkForm">
+                            <div class="claim-group">
+                                <span class="prefix">buraqbio.link/</span>
+                                <input type="text" id="checkUsername" placeholder="yourname" required>
+                            </div>
+                            <button type="submit" class="btn btn-gold">Check Availability</button>
+                        </form>
+
+                        <div class="hero-points">
+                            <span><i class="fa-solid fa-check"></i> Ready in 2 minutes</span>
+                            <span><i class="fa-solid fa-check"></i> Works on every phone</span>
+                            <span><i class="fa-solid fa-check"></i> 100% free forever</span>
+                        </div>
+                    </div>
+
+                    <!-- Static Hero Image Mockup -->
+                    <div class="hero-media">
+                        <img src="assets/hero-img-v2.png" alt="BuraqBio profile demo" class="hero-static-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-section">
+            <div class="container">
+                <h2>How it works</h2>
+                <p class="section-sub">Get your custom page up and running in less than two minutes.</p>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <span class="step-num">1</span>
+                        <h3>Claim your username</h3>
+                        <p>Pick a unique name for your page. It takes seconds and becomes your personal public link.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-num">2</span>
+                        <h3>Add your links and profile</h3>
+                        <p>Add all your social handles, store, WhatsApp, custom buttons, photo, and a short bio.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-num">3</span>
+                        <h3>Share it everywhere</h3>
+                        <p>Paste your BuraqBio link in your Instagram, TikTok, or WhatsApp bio so visitors find everything easily.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Made for Creators Section -->
+        <section class="creators-section">
+            <div class="container">
+                <div class="creators-grid">
+                    <div class="creators-media">
+                        <img src="assets/hero-cover-creators.webp" alt="Made for creators" class="creators-square-img">
+                    </div>
+                    <div class="creators-content">
+                        <h2>Made for creators, makers, and dreamers</h2>
+                        <p class="creators-lead">
+                            Whether you produce content, sell handmade items like CanCake, teach classes, or run a service,
+                            BuraqBio brings your whole digital world together into one easy destination.
+                        </p>
+                        <a href="p.html?u=ali123" class="btn btn-primary creators-btn">View demo profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <span class="badge-gold">START TODAY</span>
+                    <h2>Your name is still available</h2>
+                    <p>Claim your free link now before someone else takes it. It takes less than two minutes.</p>
+                    <a href="login.html" class="btn btn-gold btn-lg">Create your page</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="home-foot">
+        <div class="container foot-row">
+            <span class="foot-brand"><b>Buraq</b><span class="bio">Bio</span>.link &middot; Take your links further.</span>
+            <span class="powered-jk">Powered by JK</span>
+        </div>
+    </footer>
+
+    <script type="module" src="firebase-init.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>

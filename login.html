@@ -17,10 +17,10 @@
 
 <body class="dark gradient">
 
-    <main class="page-wrapper">
+    <main>
         <div class="auth-wrap">
             <div class="back-home-wrap">
-                <a href="#">← Back to homepage</a>
+                <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to homepage</a>
             </div>
             <div class="auth-card glass">
                 <div class="logo-stack">
@@ -35,10 +35,6 @@
                 <form class="auth-form" id="formLogin">
                     <h1>Welcome back</h1>
                     <p class="sub">Log in to manage your links and see your clicks.</p>
-
-                    <!-- Error state -->
-                    <div class="error-banner hidden" id="loginError"></div>
-
                     <div class="field">
                         <label for="loginEmail">Email</label>
                         <input class="input" id="loginEmail" type="email" placeholder="you@example.com" required>
@@ -60,13 +56,6 @@
                 <form class="auth-form hidden" id="formSignup">
                     <h1>Create your page</h1>
                     <p class="sub">Pick your username first. It becomes your link.</p>
-
-                    <div class="success-banner hidden" id="signupSuccess">
-                        <div><b>Signup Successful.</b></div>
-                    </div>
-
-                    <div class="error-banner hidden" id="signupError"></div>
-
                     <div class="field">
                         <label for="suEmail">Email</label>
                         <input class="input" id="suEmail" type="email" placeholder="you@example.com" required>
@@ -82,12 +71,12 @@
 
                     <div class="field">
                         <label for="suUsername">Your username</label>
-                        <div class="claim-group" id="claimGroup">
+                        <div class="claim-group">
                             <span class="prefix">buraqbio.link/</span>
                             <input id="suUsername" type="text" placeholder="yourname" required>
                         </div>
-                        <p class="feedback" id="claimFeedback">
-                            <span id="claimMsg">3 to 24 characters - lowercase letters, numbers and underscore only.</span>
+                        <p class="feedback">
+                            <span>3 to 24 characters - lowercase letters, numbers and underscore only.</span>
                         </p>
                     </div>
 

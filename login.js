@@ -5,16 +5,13 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/1
 const auth = getAuth();
 const db = getDatabase();
 
-// UI Elements
+
 var formLogin = document.getElementById("formLogin");
 var formSignup = document.getElementById("formSignup");
 var tabLogin = document.getElementById("tabLogin");
 var tabSignup = document.getElementById("tabSignup");
 var goToSignup = document.getElementById("goToSignup");
 var goToLogin = document.getElementById("goToLogin");
-var loginError = document.getElementById("loginError");
-var signupError = document.getElementById("signupError");
-var signupSuccess = document.getElementById("signupSuccess");
 
 var toggleLoginPw = document.getElementById("toggleLoginPw");
 var toggleSuPw = document.getElementById("toggleSuPw");
@@ -48,7 +45,7 @@ goToLogin.addEventListener("click", showLogin);
 tabSignup.addEventListener("click", showSignup);
 goToSignup.addEventListener("click", showSignup);
 
-toggleLoginPw.addEventListener("change", function() {
+toggleLoginPw.addEventListener("change", function () {
     if (toggleLoginPw.checked) {
         loginPassword.type = "text";
     } else {
@@ -56,7 +53,7 @@ toggleLoginPw.addEventListener("change", function() {
     }
 });
 
-toggleSuPw.addEventListener("change", function() {
+toggleSuPw.addEventListener("change", function () {
     if (toggleSuPw.checked) {
         suPassword.type = "text";
     } else {
@@ -68,16 +65,12 @@ toggleSuPw.addEventListener("change", function() {
 formSignup.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    signupError.classList.add("hidden");
-    signupSuccess.classList.add("hidden");
-
     var username = suUsername.value.trim().toLowerCase();
 
     get(ref(db, "usernames/" + username))
-        .then((data) => {
-            if (data.exists()) {
-                signupError.classList.remove("hidden");
-                signupError.textContent = "Username already taken";
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                alert("Username already taken!");
                 return;
             }
 
@@ -94,20 +87,18 @@ formSignup.addEventListener("submit", (e) => {
                 })
 
                 .then(() => {
-                    signupSuccess.classList.remove("hidden");
-                    signupSuccess.textContent = "Registration Successful. Please login now.";
+                    alert("Registration Successful! Please login now.");
                     formSignup.reset();
+                    showLogin();
                 })
 
                 .catch((error) => {
-                    signupError.classList.remove("hidden");
-                    signupError.textContent = error.message;
+                    alert(error.message);
                 });
         })
-        
+
         .catch((error) => {
-            signupError.classList.remove("hidden");
-            signupError.textContent = error.message;
+            alert(error.message);
         });
 });
 
@@ -115,15 +106,12 @@ formSignup.addEventListener("submit", (e) => {
 formLogin.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    loginError.classList.add("hidden");
-
     signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value)
         .then((userCredential) => {
             window.location.href = `dashboard.html`;
         })
 
         .catch((error) => {
-            loginError.classList.remove("hidden");
-            loginError.textContent = error.message;
+            alert(error.message);
         });
 });

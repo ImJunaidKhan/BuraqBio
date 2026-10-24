@@ -14,7 +14,6 @@
 
 <body>
 
-    <!-- Topbar -->
     <header class="dashboard-topbar">
         <div class="container topbar-row">
             <a href="index.html" class="topbar-logo">
@@ -23,73 +22,68 @@
             </a>
 
             <div class="topbar-actions">
-                <input type="text" class="url-input" id="chipUrl" value="buraqbio.link/..." readonly>
-                <button type="button" class="btn btn-sm btn-outline" id="btnCopyLink">Copy Link</button>
-                <a href="#" target="_blank" class="btn btn-sm btn-outline" id="btnViewProfile">View Page</a>
+                <input type="text" class="url-input" id="profilePageUrl" value="buraqbio.link/..." readonly>
+                <a href="p.html" target="_blank" class="btn btn-sm btn-outline" id="btnViewProfile">View Page</a>
                 <button type="button" class="btn btn-sm btn-outline" id="btnLogout">Log out</button>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container page-content">
         <div class="page-head">
             <h1>Dashboard</h1>
             <p>Manage your links and update your bio.</p>
         </div>
 
-        <!-- Profile Section -->
         <section class="card">
             <div class="card-head">
                 <h2>Your Profile</h2>
-                <span class="hint">How your page looks to visitors</span>
             </div>
 
             <form id="profileForm">
                 <div class="profile-grid">
                     <div class="avatar-box">
-                        <div class="avatar-preview" id="avatarPreview">BB</div>
-                        <p class="note">Initials or photo preview</p>
+                        <div class="profile-img" id="profileImg">BB</div>
+                        <p class="note">Photo Preview</p>
                     </div>
 
                     <div class="profile-fields">
                         <div class="field">
                             <label for="displayName">Display Name</label>
-                            <input class="input" id="displayName" type="text" placeholder="e.g. Sweet Crumb Bakery">
+                            <input class="input" id="displayName" type="text" placeholder="Sweet Crumb Bakery" required>
                         </div>
 
                         <div class="field">
                             <label for="profileBio">Bio</label>
-                            <textarea class="input" id="profileBio" rows="2" placeholder="e.g. Custom cakes in Karachi. Order online!"></textarea>
+                            <textarea class="input" id="profileBio" rows="2"
+                                placeholder="Custom cakes in Karachi. Order online!" required></textarea>
                         </div>
 
                         <div class="field">
-                            <label for="photoUrl">Photo URL (Optional)</label>
+                            <label for="photoUrl">Photo URL</label>
                             <input class="input" id="photoUrl" type="url" placeholder="https://example.com/photo.jpg">
                         </div>
 
-                        <button class="btn btn-primary" type="submit" id="btnSaveProfile">Save Profile</button>
+                        <button class="btn btn-primary" type="submit">Save Changes</button>
                     </div>
                 </div>
             </form>
         </section>
 
-        <!-- Links Section -->
         <section class="card">
             <div class="card-head">
                 <h2>Your Links</h2>
             </div>
 
-            <!-- Add / Edit Link Form -->
             <form class="add-form" id="addLinkForm">
                 <input type="hidden" id="editLinkId" value="">
                 <div class="field">
                     <label for="linkTitle">Link Title</label>
-                    <input class="input" id="linkTitle" type="text" placeholder="e.g. Order via WhatsApp" required>
+                    <input class="input" id="linkTitle" type="text" placeholder="Order via WhatsApp" required>
                 </div>
                 <div class="field">
                     <label for="linkUrl">URL</label>
-                    <input class="input" id="linkUrl" type="url" placeholder="https://wa.me/923001234567" required>
+                    <input class="input" id="linkUrl" type="url" placeholder="https://wa.me/923123456789" required>
                 </div>
                 <div class="form-btn-wrap">
                     <button class="btn btn-primary" type="submit" id="btnAddLink">Add Link</button>
@@ -97,8 +91,8 @@
                 </div>
             </form>
 
-            <!-- Empty state -->
-            <div class="empty-note" id="emptyNote" style="display: none;">
+            <!-- Empty State -->
+            <div class="empty-note hidden" id="emptyNote">
                 <p>No links yet. Add your first link above!</p>
             </div>
 
