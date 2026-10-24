@@ -5,6 +5,7 @@ Demo URL:
 https://buraqbio.web.app/p.html?u=kababjeesfriedchicken
 
 LinkTr.ee and lnk.bio are the biggest competitors in this market charging $14 to $30 per month for these app from creators and small businesses.
+https://linktr.ee/s/pricing
 
 Checkout creator profiles examples here from LinkTr.ee which includes all their links and products at one place.
 https://linktr.ee/discover/top-linktree-profiles
