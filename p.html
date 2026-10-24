@@ -6,17 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.webp">
     <title>BuraqBio</title>
-    <meta name="description"
-        content="See links from this creator or business on BuraqBio, the free link-in-bio builder.">
+    <meta name="description" content="See links from this creator or business on BuraqBio, the free link-in-bio builder.">
 
     <link rel="stylesheet" href="style.css" type="text/css">
-
 </head>
 
-<body>
+<body class="dark gradient">
 
+    <main class="profile-page-wrap">
+        <!-- Live Profile Card -->
+        <div class="profile-card" id="profileContent">
+            <!-- Avatar -->
+            <div class="profile-avatar" id="pAvatar">BB</div>
 
-    <script src="profile.js" type="module"></script>
+            <!-- Profile Info -->
+            <h1 class="profile-name" id="pName">Loading...</h1>
+            <p class="profile-bio" id="pBio"></p>
+
+            <!-- Links List -->
+            <div class="profile-links-list" id="pLinks"></div>
+
+            <!-- Footer -->
+            <footer class="profile-footer">
+                <a href="index.html" class="powered-badge">
+                    <img src="assets/favicon.webp" alt="Buraq Wing">
+                    <span>Powered by <b>Buraq<span class="bio">Bio</span></b></span>
+                </a>
+            </footer>
+        </div>
+
+        <!-- 404 / User Not Found -->
+        <div class="not-found-card glass hidden" id="notFoundCard">
+            <img src="assets/favicon.webp" alt="Buraq Wing" class="nf-logo">
+            <h2>Page Not Found</h2>
+            <p class="nf-url" id="nfUrlText">buraqbio.link/u/...</p>
+            <p>This BuraqBio link hasn't been claimed yet.</p>
+            <a href="login.html" class="btn btn-gold btn-claim">Claim this username</a>
+        </div>
+    </main>
+
+    <script type="module" src="firebase-init.js"></script>
+    <script type="module" src="profile.js"></script>
 </body>
 
 </html>
