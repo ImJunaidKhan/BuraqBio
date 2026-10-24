@@ -1,5 +1,6 @@
 # BuraqBio
 Free link-in-bio builder for creators and small businesses. One page for your links. Built with vanilla JavaScript and Firebase.
+https://buraqbio.web.app/p.html?u=kababjeesfriedchicken
 
 LinkTr.ee and lnk.bio are the biggest competitors in this market charging $14 to $30 per month for these app from creators and small businesses.
 
